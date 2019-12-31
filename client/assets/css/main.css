@@ -1,0 +1,33 @@
+html, body {
+  background-color: #eee;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.link{
+  cursor:pointer;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 145px;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
