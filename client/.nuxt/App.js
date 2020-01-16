@@ -11,6 +11,14 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '..\\assets\\css\\main.css'
 
+import '..\\node_modules\\highlight.js\\styles\\default.css'
+
+import '..\\node_modules\\highlight.js\\styles\\rainbow.css'
+
+import '..\\node_modules\\codemirror\\lib\\codemirror.css'
+
+import '..\\node_modules\\codemirror\\theme\\monokai.css'
+
 import '..\\node_modules\\vuetify\\dist\\vuetify.css'
 
 import _5fa3735e from '..\\layouts\\dashboard.vue'

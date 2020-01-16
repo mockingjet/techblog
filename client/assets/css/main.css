@@ -1,33 +1,46 @@
-html, body {
-  background-color: #eee;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  height: 100vh;
-  margin: 0;
+/* nuxt transition start */
+.page-enter-active, 
+.page-leave-active {
+  transition: opacity .3s
 }
-
-
-footer {
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
+.page-enter, 
+.page-leave-to {
+  opacity: 0
 }
-
-.link{
-  cursor:pointer;
+.page-enter-to, 
+.page-leave {
+  opacity: 1
 }
-
-.logo {
-  width: 100%;
-  height: auto;
-  max-width: 200px;
-  max-height: 145px;
+.layout-enter-active, .layout-leave-active {
+  transition: opacity .2s
 }
-
-.page-enter-active, .page-leave-active {
-  transition: opacity .2s;
-}
-.page-enter, .page-leave-to {
+.layout-enter, .layout-leave-active {
   opacity: 0;
+  background-color: #242424
+}
+/* nuxt transition end */
+
+/* main css start */
+.v-application code::after, .v-application code::before{
+  content:unset !important;
+}
+body,html,.v-application {
+  font-family: '微軟正黑體', 'PT Sans', Helvetica, Arial, sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+h1{font-size:36px;margin-top: 20px;margin-bottom: 10px;}
+h2{font-size:30px;margin-top: 20px;margin-bottom: 10px;}
+h3{font-size:24px;margin-top: 20px;margin-bottom: 10px;}
+h4{font-size:18px;margin-top: 10px;margin-bottom: 10px;}
+h5{font-size:14px;margin-top: 10px;margin-bottom: 10px;}
+h6{font-size:12px;margin-top: 10px;margin-bottom: 10px;}
+
+table td{
+  border-collapse: collapse !important;
+  border:1px solid black;
 }

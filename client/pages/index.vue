@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="align-cneter justfiy-center">
       <v-col v-for="(item, i) in items" :key="i">
-        <item-card :item="item" />
+        <topic-card :item="item" />
       </v-col>
     </v-row>
   </v-container>
@@ -10,10 +10,10 @@
 
 <script>
 import axios from "~/plugins/axios";
-import ItemCard from "~/components/Home/ItemCard.vue";
+import TopicCard from "~/components/Home/TopicCard.vue";
 export default {
   components: {
-    ItemCard
+    TopicCard
   },
   head() {
     return {

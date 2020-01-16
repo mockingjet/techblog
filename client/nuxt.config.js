@@ -27,11 +27,21 @@ module.exports = {
   ** Third Party Library
   */
   buildModules: [
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
   vuetify: {},
+  plugins: [
+    '~/plugins/markdownit',
+    { src: '~/plugins/codemirror', ssr: false }
+  ],
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/main.css']
+  css: [
+    '~/assets/css/main.css',
+    'highlight.js/styles/default.css',
+    'highlight.js/styles/rainbow.css',
+    'codemirror/lib/codemirror.css',
+    'codemirror/theme/monokai.css'
+  ]
 }

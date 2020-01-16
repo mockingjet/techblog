@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="#fff">
+  <v-app-bar app dark color="secondary">
     <v-icon>mdi-home</v-icon>
     <div class="ml-2"></div>
     <v-toolbar-title>

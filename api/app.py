@@ -1,10 +1,11 @@
 from flask import Flask, Blueprint, jsonify
 from flask_cors import CORS
 from resources.articles import api_articles_bp
+from resources.tags import api_tags_bp
 
 #####################################################
 app = Flask(__name__)
-client = 'http://192.168.1.113:3000'
+client = '*'
 CORS(app, resources={r"/api/*": {"origins": client}})
 #####################################################
 
@@ -15,6 +16,7 @@ def hello():
 
 
 app.register_blueprint(api_articles_bp)
+app.register_blueprint(api_tags_bp)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

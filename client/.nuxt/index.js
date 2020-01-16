@@ -12,6 +12,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_plugin_03795712 from 'nuxt_plugin_plugin_03795712' // Source: .\\vuetify\\plugin.js (mode: 'all')
+import nuxt_plugin_markdownit_69ef6b60 from 'nuxt_plugin_markdownit_69ef6b60' // Source: ..\\plugins\\markdownit (mode: 'all')
+import nuxt_plugin_codemirror_7f36f3e2 from 'nuxt_plugin_codemirror_7f36f3e2' // Source: ..\\plugins\\codemirror (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -147,6 +149,14 @@ async function createApp (ssrContext) {
 
   if (typeof nuxt_plugin_plugin_03795712 === 'function') {
     await nuxt_plugin_plugin_03795712(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_markdownit_69ef6b60 === 'function') {
+    await nuxt_plugin_markdownit_69ef6b60(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_codemirror_7f36f3e2 === 'function') {
+    await nuxt_plugin_codemirror_7f36f3e2(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

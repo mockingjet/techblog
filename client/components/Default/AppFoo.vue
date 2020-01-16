@@ -1,12 +1,10 @@
 <template>
-  <v-card height="150">
-    <v-footer app class="font-weight-medium">
-      <v-col class="text-center" cols="12">
-        {{ new Date().getFullYear() }} —
-        <strong>Peter Tsai</strong>
-      </v-col>
-    </v-footer>
-  </v-card>
+  <v-footer dark color="#444" class="font-weight-medium">
+    <v-col class="text-center pa-0" cols="12">
+      {{ new Date().getFullYear() }} —
+      <strong>Peter Tsai</strong>
+    </v-col>
+  </v-footer>
 </template>
 
 <script>

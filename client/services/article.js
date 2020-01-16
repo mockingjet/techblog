@@ -3,15 +3,23 @@ import request from "~/plugins/axios"
 const all = async () => {
   try {
     const { data = {} } = await request.get('/articles')
-    return data
+    return data.list
   } catch (err) {
     console.log(err)
     return {}
   }
 }
 
-const add = () => {
-
+const add = async (
+  params = {
+    title,
+    tags,
+    preview,
+    content
+  }
+) => {
+  const { data = {} } = await request.post('/articles', params)
+  return data.id || false
 }
 
 const get = async (id) => {

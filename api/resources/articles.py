@@ -12,32 +12,61 @@ mocks = [
     {
         'id': '1',
         'title': 'first post',
-        'subtitle': 'just a few words, don\'t mind',
+        'preview': 'just a few words, don\'t mind',
+        'tags': ['Frontend', 'Vue'],
         'content': 'my first post haha',
         'date': '2019/12/30'
     },
     {
         'id': '2',
         'title': 'second post',
-        'subtitle': 'just a few words, don\'t mind',
+        'preview': 'just a few words, don\'t mind',
+        'tags': ['Backend', 'Flask'],
         'content': 'my second post haha',
         'date': '2019/12/31'
     },
     {
         'id': '3',
         'title': 'last post',
-        'subtitle': 'just a few words, don\'t mind',
+        'preview': 'just a few words, don\'t mind',
+        'tags': ['DevOps', 'Azure'],
+        'content': 'my last post haha',
+        'date': '2020/01/01'
+    },
+    {
+        'id': '4',
+        'title': 'another post',
+        'preview': 'just a few words, don\'t mind',
+        'tags': ['Flask', 'Nuxt', 'SEO'],
+        'content': 'my last post haha',
+        'date': '2020/01/01'
+    },
+    {
+        'id': '5',
+        'title': 'extra post',
+        'tags': ['Axios', 'Http', 'Network'],
+        'preview': 'just a few words, don\'t mind',
         'content': 'my last post haha',
         'date': '2020/01/01'
     }
 ]
 
 
-@api_articles_bp.route('/', methods=['GET', 'POST'])
+@api_articles_bp.route('', methods=['GET', 'POST'])
 def articles():
     if request.method == 'GET':
         articles = get_articles()
-        return make_response(jsonify(articles), 200)
+        rv = {
+            "list": articles
+        }
+        return make_response(jsonify(rv), 200)
+
+    if request.method == 'POST':
+        data = request.get_json()
+        rv = {
+            "id": 1
+        }
+        return make_response(jsonify(rv), 200)
 
     abort(400)
 
@@ -46,7 +75,6 @@ def articles():
 def article(_id):
     if request.method == 'GET':
         article = get_article(_id)
-        print(article)
         return make_response(jsonify(article), 200)
 
     abort(400)
