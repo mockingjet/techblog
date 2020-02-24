@@ -4,6 +4,7 @@ from db import db
 class Base(db.Model):
     __abstract__ = True
 
+    @property
     def as_dict(self):
         self_dict = {}
         for col, val in self.__dict__.items():

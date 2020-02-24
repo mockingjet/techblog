@@ -34,9 +34,9 @@ class Article(Base):
 
     @property
     def view(self):
-        _dict = self.as_dict()
+        _dict = self.as_dict
         _dict.update({
-            "tags": [tag.as_dict()['tag_name'] for tag in self.tags]
+            "tags": [tag.as_dict['tag_name'] for tag in self.tags]
         })
         return _dict
 
