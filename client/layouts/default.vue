@@ -9,15 +9,9 @@
 </template>
 
 <script>
-import AppDrawer from "~/components/Default/AppDrawer";
 import AppBar from "~/components/Default/AppBar";
 import AppFoo from "~/components/Default/AppFoo";
 export default {
-  components: { AppDrawer, AppBar, AppFoo },
-  data() {
-    return {
-      drawer: true
-    };
-  }
+  components: { AppBar, AppFoo }
 };
 </script>
