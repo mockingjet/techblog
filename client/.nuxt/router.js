@@ -8,7 +8,6 @@ const _7d4269b7 = () => interopDefault(import('..\\pages\\articles.vue' /* webpa
 const _142edeeb = () => interopDefault(import('..\\pages\\articles\\index.vue' /* webpackChunkName: "pages_articles_index" */))
 const _792da013 = () => interopDefault(import('..\\pages\\articles\\_id.vue' /* webpackChunkName: "pages_articles__id" */))
 const _63cfc484 = () => interopDefault(import('..\\pages\\admin\\articles\\create.vue' /* webpackChunkName: "pages_admin_articles_create" */))
-const _87be1256 = () => interopDefault(import('..\\pages\\topic\\_topic.vue' /* webpackChunkName: "pages_topic__topic" */))
 const _5de53b70 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 // TODO: remove in Nuxt 3
@@ -47,10 +46,6 @@ export const routerOptions = {
     path: "/admin/articles/create",
     component: _63cfc484,
     name: "admin-articles-create"
-  }, {
-    path: "/topic/:topic?",
-    component: _87be1256,
-    name: "topic-topic"
   }, {
     path: "/",
     component: _5de53b70,

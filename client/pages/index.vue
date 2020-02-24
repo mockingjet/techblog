@@ -1,19 +1,18 @@
 <template>
   <v-container>
-    <v-row class="align-cneter justfiy-center">
-      <v-col v-for="(item, i) in items" :key="i">
-        <topic-card :item="item" />
-      </v-col>
-    </v-row>
+    <new-section />
+    <pop-section />
   </v-container>
 </template>
 
 <script>
 import axios from "~/plugins/axios";
-import TopicCard from "~/components/Home/TopicCard.vue";
+import NewSection from "~/components/Home/NewSection";
+import PopSection from "~/components/Home/PopSection";
 export default {
   components: {
-    TopicCard
+    NewSection,
+    PopSection
   },
   head() {
     return {
@@ -21,37 +20,7 @@ export default {
     };
   },
   data() {
-    return {
-      items: [
-        {
-          title: "Frontend",
-          icon: "mdi-home",
-          link: "/topic/Frontend",
-          subtitle: "研究前端技術"
-        },
-        {
-          title: "Backend",
-          icon: "mdi-account-question",
-          link: "/topic/Backend",
-          subtitle: "研究後端技術"
-        },
-        {
-          title: "DevOps",
-          icon: "mdi-pen",
-          link: "/topic/Devops",
-          subtitle: "研究系統架構"
-        }
-      ]
-    };
+    return {};
   }
 };
 </script>
-
-<style>
-h1 {
-  font-size: 40px;
-}
-p {
-  font-size: 20px;
-}
-</style>

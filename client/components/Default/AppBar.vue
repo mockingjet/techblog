@@ -1,15 +1,15 @@
 <template>
-  <v-app-bar app dark color="secondary">
+  <v-app-bar app dark color="secondary" class="px-12">
     <v-icon>mdi-home</v-icon>
     <div class="ml-2"></div>
     <v-toolbar-title>
-      <nuxt-link to="/" tag="div" class="link">Tech Blog</nuxt-link>
+      <nuxt-link to="/" tag="div" class="link">JET Blog</nuxt-link>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
 
-    <v-btn color="blue" dark nuxt to="/admin/articles/create">創建文章</v-btn>
-    <v-btn color="red" dark nuxt to="/articles">瀏覽文章</v-btn>
+    <v-btn color="blue" class="mx-1" dark nuxt to="/admin/articles/create">創建文章</v-btn>
+    <v-btn color="red" class="mx-1" dark nuxt to="/articles">瀏覽所有文章</v-btn>
 
     <v-btn icon>
       <v-icon>mdi-magnify</v-icon>

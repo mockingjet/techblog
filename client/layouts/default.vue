@@ -1,11 +1,9 @@
 <template>
   <v-app>
     <app-bar />
-
     <v-content>
       <nuxt />
     </v-content>
-
     <app-foo />
   </v-app>
 </template>
