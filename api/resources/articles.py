@@ -33,7 +33,7 @@ class ArticlesResource(Resource):
 
         article.save()
 
-        return article.article_id, 200
+        return {'id': article.article_id}, 200
 
 
 class ArticleResource(Resource):

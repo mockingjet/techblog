@@ -43,12 +43,17 @@ export default {
   methods: {
     remove(item) {
       this.tags.splice(this.tags.indexOf(item), 1);
-      this.tags = [...this.tags];
     }
   },
   watch: {
-    tags(value) {
-      this.$emit("update:tags", value);
+    tags(val, prev) {
+      if (val.length == prev.length) return;
+
+      this.tags = val.map(v => {
+        if (typeof v === "string") return { tag_name: v };
+      });
+
+      this.$emit("update:tags", val);
     }
   }
 };
