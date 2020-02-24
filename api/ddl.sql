@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS articles;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS articles_to_tags;
+
 CREATE TABLE articles (
   article_id INTEGER PRIMARY KEY AUTOINCREMENT,
   title CHAR(255) NOT NULL,
@@ -18,7 +22,7 @@ CREATE TABLE articles_to_tags(
   FOREIGN KEY (tag_id) REFERENCES tags (tag_id)
 );
 
-INSERT INTO tags (tag_name) VALUES ('VueJS'), ('Python'), ('Flask');
+INSERT INTO tags (tag_name) VALUES ('Javascript'), ('VueJS'), ('Python'), ('Flask');
 
 INSERT INTO articles (title, preview, content, created_at) VALUES
 ('測試', '測試預覽', '測試內容', '2020/01/20 20:18:53');

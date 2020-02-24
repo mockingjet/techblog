@@ -18,10 +18,9 @@ class ArticlesResource(Resource):
         for _tag in _tags:
             tag = Tag.query.filter_by(tag_name=_tag['tag_name']).first()
             if not tag:
-                new = Tag(_tag['tag_name']).save()
-                tags.append(new)
-            else:
-                tags.append(tag)
+                Tag(_tag['tag_name']).save()
+                tag = Tag.query.filter_by(tag_name=_tag['tag_name']).first()
+            tags.append(tag)
 
         article = Article(
             tags=tags,
