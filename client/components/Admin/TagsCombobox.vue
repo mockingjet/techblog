@@ -50,7 +50,9 @@ export default {
       if (val.length == prev.length) return;
 
       this.tags = val.map(v => {
+        console.log(typeof v);
         if (typeof v === "string") return { tag_name: v };
+        else return v;
       });
 
       this.$emit("update:tags", val);
