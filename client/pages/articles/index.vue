@@ -7,13 +7,13 @@
             <v-list-item-avatar color="grey darken-3">
               <v-img
                 class="elevation-6"
-                src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                src="https://scontent.ftpe8-3.fna.fbcdn.net/v/t1.0-1/p240x240/11219138_541153392699739_9006033499368140281_n.jpg?_nc_cat=107&_nc_oc=AQkZzC0XF6wAyURMn_JEFyb2WWrc0SsNfqlqHwrQpesOEfvMxhJy0V51Slv1ORIUIUc&_nc_ht=scontent.ftpe8-3.fna&_nc_tp=6&oh=d9777f009c61b1203558845b5a657ddf&oe=5E8E7094"
               ></v-img>
             </v-list-item-avatar>
             <v-list-item-content>
-              <v-list-item-title>Evan You</v-list-item-title>
+              <v-list-item-title>Peter Tsai</v-list-item-title>
               <v-list-item-subtitle>
-                <small>{{article.date}}</small>
+                <small>{{article.created_at.split(" ")[0]}}</small>
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-row align="center" justify="end">
@@ -39,7 +39,7 @@
             <v-chip small class="mr-1" v-for="(tag, i) in article.tags" :key="i">{{tag}}</v-chip>
           </v-row>
           <v-row align="center" justify="end" class="pr-6 pb-3">
-            <v-btn small color="red" dark nuxt :to="`/articles/${article.id}`">more</v-btn>
+            <v-btn small color="red" dark nuxt :to="`/articles/${article.article_id}`">more</v-btn>
           </v-row>
         </v-card-actions>
       </v-card>

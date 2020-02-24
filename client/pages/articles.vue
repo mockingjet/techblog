@@ -11,7 +11,7 @@
           <v-list-item-group color="primary" class="tags-group">
             <v-list-item v-for="(tag, i) in tags" :key="i">
               <v-list-item-content>
-                <v-list-item-title>{{tag}}</v-list-item-title>
+                <v-list-item-title>{{tag.tag_name}}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -27,7 +27,7 @@ export default {
   async asyncData() {
     let data = await Tag.all();
     return {
-      tags: data
+      tags: data.list
     };
   }
 };

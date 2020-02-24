@@ -1,11 +1,11 @@
 <template>
   <v-container fluid class="ma-0 pa-0" style="position:relative">
     <!-- Article -->
-    <v-row class="no-gutters pb-12 post-form" align="center" justify="center">
+    <v-row class="no-gutters pb-12 article-form" align="center" justify="center">
       <v-container>
         <v-col cols="10" offset="1">
-          <v-text-field dark filled label="文章標題" background-color="#444" v-model="post.title" />
-          <tags-combobox :tags.sync="post.tags" />
+          <v-text-field dark filled label="文章標題" background-color="#444" v-model="article.title" />
+          <tags-combobox :tags.sync="article.tags" />
           <v-textarea
             dark
             filled
@@ -13,7 +13,7 @@
             auto-grow
             label="文章預覽"
             background-color="#444"
-            v-model="post.preview"
+            v-model="article.preview"
           />
           <v-row justify="center">
             <v-btn
@@ -38,12 +38,12 @@
     <v-row class="no-gutters makr">
       <v-col cols="6">
         <client-only placeholder="Loading...">
-          <codemirror class="editor" v-model="post.content" :options="cmOpts" />
+          <codemirror class="editor" v-model="article.content" :options="cmOpts" />
         </client-only>
       </v-col>
       <v-col cols="6">
         <div class="viewer">
-          <div v-html="$md.render(post.content)"></div>
+          <div v-html="$md.render(article.content)"></div>
         </div>
       </v-col>
     </v-row>
@@ -70,7 +70,7 @@ export default {
         lineNumbers: true,
         lineWrapping: true
       },
-      post: {
+      article: {
         title: "",
         tags: [],
         preview: "",
@@ -80,7 +80,8 @@ export default {
   },
   methods: {
     async addArticle() {
-      const article_id = await Article.add(this.post);
+      const article_id = await Article.add(this.article);
+      console.log(article_id);
       if (article_id) this.$router.push("/articles/1");
       else alert("error");
     }
@@ -90,7 +91,7 @@ export default {
 
 <style lang="scss">
 $gap: calc(100vh - 64px);
-.post-form {
+.article-form {
   height: $gap;
 }
 .editor {

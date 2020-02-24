@@ -6,9 +6,10 @@
     multiple
     hide-selected
     label="文章標籤"
-    persistent-hint
     background-color="#444"
     :items="items"
+    item-text="tag_name"
+    item-value="id"
     v-model="tags"
   >
     <template v-slot:selection="{ attrs, item, select, selected }">
@@ -21,7 +22,7 @@
         @click="select"
         @click:close="remove(item)"
       >
-        <strong>{{ item }}</strong>
+        <strong>{{ item.tag_name }}</strong>
       </v-chip>
     </template>
   </v-combobox>
@@ -37,7 +38,7 @@ export default {
   },
   async created() {
     let data = await Tag.all();
-    this.items = data;
+    this.items = data.list;
   },
   methods: {
     remove(item) {

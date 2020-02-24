@@ -1,22 +1,22 @@
-from flask import Flask, Blueprint, jsonify
+from flask import Flask
 from flask_cors import CORS
-from resources.articles import api_articles_bp
-from resources.tags import api_tags_bp
-
-#####################################################
-app = Flask(__name__)
-client = '*'
-CORS(app, resources={r"/api/*": {"origins": client}})
-#####################################################
+from conf import Config
+from db import db
+from urls import api
+import click
 
 
-@app.route('/')
-def hello():
-    return 'Hello, World!'
+def create_app(config=Config):
+    app = Flask(__name__)
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    app.config.from_object(config)
 
+    db.init_app(app)
+    api.init_app(app)
 
-app.register_blueprint(api_articles_bp)
-app.register_blueprint(api_tags_bp)
+    @app.route('/')
+    def test():
+        db.create_all()
+        return 'test'
 
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    return app

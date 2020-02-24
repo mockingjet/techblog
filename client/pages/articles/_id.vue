@@ -3,12 +3,12 @@
     <h2>{{upperTitle}}</h2>
     <small>{{article.date}}</small>
     <v-list>
-      <v-chip label class="mr-1" v-for="(tag,i) in article.tags" :key="i">{{tag}}</v-chip>
+      <v-chip label class="mr-1" v-for="(tag,i) in article.tags.split(',')" :key="i">{{tag}}</v-chip>
     </v-list>
     <h3>{{article.preview}}</h3>
     <p>{{article.content}}</p>
     <client-only>
-      <vue-disqus shortname="jet-blog" :identifier="article.id"></vue-disqus>
+      <vue-disqus shortname="jet-blog" :identifier="article.article_id"></vue-disqus>
     </client-only>
   </v-container>
 </template>
