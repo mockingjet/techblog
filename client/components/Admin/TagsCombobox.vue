@@ -38,7 +38,7 @@ export default {
   },
   async created() {
     let data = await Tag.all();
-    this.items = data.list;
+    this.items = data;
   },
   methods: {
     remove(item) {

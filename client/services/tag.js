@@ -3,29 +3,21 @@ import request from "~/plugins/axios"
 const all = async () => {
   try {
     const { data = {} } = await request.get('/tags')
-    return data
+    return data.list
   } catch (err) {
     console.log(err)
     return {}
   }
 }
 
-const add = async (
-
-) => {
-
+const getPop4 = async () => {
+  try {
+    const { data = {} } = await request.get('/tags')
+    return data.list
+  } catch (err) {
+    console.log(err)
+    return {}
+  }
 }
 
-const get = async (id) => {
-
-}
-
-const set = () => {
-
-}
-
-const cut = () => {
-
-}
-
-export default { all, add, get, set, cut }
+export default { all, getPop4 }

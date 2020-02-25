@@ -27,7 +27,7 @@ export default {
   async asyncData() {
     let data = await Tag.all();
     return {
-      tags: data.list
+      tags: data
     };
   }
 };

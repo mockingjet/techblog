@@ -32,12 +32,14 @@ const get = async (id) => {
   }
 }
 
-const set = () => {
-
+const getNew4 = async () => {
+  try {
+    const { data = {} } = await request.get('/articles')
+    return data.list
+  } catch (err) {
+    console.log(err)
+    return {}
+  }
 }
 
-const cut = () => {
-
-}
-
-export default { all, add, get, set, cut }
+export default { all, add, get, getNew4 }

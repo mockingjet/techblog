@@ -6,8 +6,7 @@ from models.article import Article, Tag
 class ArticlesResource(Resource):
     def get(self):
         articles = Article.query.all()
-        article_list = [article.view for article in articles]
-        return {"list": article_list}, 200
+        return {"list": [article.view for article in articles]}, 200
 
     def post(self):
         req = request.json
@@ -44,3 +43,9 @@ class ArticleResource(Resource):
                     "content": "內容",
                     "created_at": "2020/01/20 20:40:17"
         }, 200
+
+
+class TagsResource(Resource):
+    def get(self):
+        tags = Tag.query.all()
+        return {"list": [tag.as_dict for tag in tags]}, 200

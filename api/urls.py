@@ -1,6 +1,5 @@
 from flask_restful import Api
-from resources.articles import ArticlesResource, ArticleResource
-from resources.tags import TagsResource
+from resources.articles import ArticlesResource, ArticleResource, TagsResource
 
 api = Api()
 

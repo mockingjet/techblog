@@ -1,9 +1,9 @@
 <template>
-  <v-app-bar app dark color="secondary" class="px-12">
+  <v-app-bar app color="white" class="px-12">
     <v-icon>mdi-home</v-icon>
     <div class="ml-2"></div>
-    <v-toolbar-title>
-      <nuxt-link to="/" tag="div" class="link">JET Blog</nuxt-link>
+    <v-toolbar-title class="font-weight-bold">
+      <nuxt-link to="/" tag="div" class="link">JET's Blog</nuxt-link>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
